@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import navStyle from './Nav.module.css';
 import planet from './planet.png';
+import navStyle from './Nav.module.css';
 
 const Nav = () => (
   <nav className={navStyle.nav}>
