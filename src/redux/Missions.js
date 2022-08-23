@@ -1,4 +1,3 @@
-/* eslint-disable no-param-reassign */
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
@@ -7,6 +6,7 @@ export const fetchMissions = createAsyncThunk(
   'fetchMissions',
   async () => {
     const response = await axios.get(`${missionsApi}`);
+    console.log(`response ${response.data}`);
     return response.data;
   },
 );
@@ -15,8 +15,15 @@ const missionsSlice = createSlice({
   name: 'missions',
   initialState,
   extraReducers: {
-    // eslint-disable-next-line no-return-assign
-    [fetchMissions.fulfilled]: (state, { payload }) => [...state, payload],
+    [fetchMissions.fulfilled]: (state, { payload }) => {
+      const missions = payload.map((mission) => ({
+        mission_id: mission.mission_id,
+        mission_name: mission.mission_name,
+        description: mission.description,
+        reserved: false,
+      }));
+      return missions;
+    },
   },
 });
 
