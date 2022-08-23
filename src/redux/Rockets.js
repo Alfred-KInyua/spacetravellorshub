@@ -1,7 +1,7 @@
 import axios from 'axios';
 import ROCKETS_API from '../Api/Api';
 
-const GET_ROCKETS = 'spaceApp/Rockets/GET_ROCKETS';
+const GET_ROCKETS = 'spacetravelors/Rockets/GET_ROCKETS';
 
 const initialRocketState = [];
 const RocketReducer = (state = initialRocketState, action) => {
