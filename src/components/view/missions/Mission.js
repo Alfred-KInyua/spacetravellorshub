@@ -1,24 +1,25 @@
 /* eslint-disable react/jsx-key */
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchMissions } from '../../../redux/Missions';
+import {
+  fetchMissions, selectMissions, joinMission, leaveMission,
+} from '../../../redux/Missions';
 import 'bootstrap/dist/css/bootstrap.css';
 
 const Mission = () => {
-  const missions = useSelector((state) => state.missions);
-  console.log(`store data ${missions.length}`);
+  const missions = useSelector(selectMissions);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchMissions({ limit: 1 }));
+    dispatch(fetchMissions({ limit: 3 }));
   }, [dispatch]);
 
   return (
     <>
-      <table className="table table-striped">
+      <table className="table table-hover">
         <thead>
           <tr>
-            <th>Mission Name</th>
+            <th>Mission</th>
             <th>Description</th>
             <th>Status</th>
             <th> </th>
@@ -31,7 +32,7 @@ const Mission = () => {
               <td>{mission.description}</td>
               {mission.reserved ? (
                 <td>
-                  <span className="badge text-bg-primary p-3">Active Member</span>
+                  <span className="badge text-bg-info p-3">Active Member</span>
                 </td>
               ) : (
                 <td>
@@ -40,12 +41,12 @@ const Mission = () => {
               )}
 
               {mission.reserved ? (
-                <td colSpan="2">
-                  <button type="button" className="btn btn-outline-danger">Leave Mission</button>
+                <td>
+                  <button type="button" className="btn btn-outline-danger" onClick={() => dispatch(leaveMission(mission.mission_id))}>Leave Mission</button>
                 </td>
               ) : (
-                <td colSpan="2">
-                  <button type="button" className="btn btn-outline-secondary">Join Mission</button>
+                <td>
+                  <button type="button" className="btn btn-outline-secondary" onClick={() => dispatch(joinMission(mission.mission_id))}>Join Mission</button>
                 </td>
               )}
             </tr>
