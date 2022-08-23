@@ -3,10 +3,10 @@ import axios from 'axios';
 
 const missionsApi = 'https://api.spacexdata.com/v3/missions';
 export const fetchMissions = createAsyncThunk(
-  'fetchMissions',
-  async () => {
-    const response = await axios.get(`${missionsApi}`);
-    console.log(`response ${response.data}`);
+  'missions/fetchMissions',
+  async ({ limit }) => {
+    const response = await axios.get(`${missionsApi}?_limit = ${limit}`);
+    console.log(`response ${response.data.length}`);
     return response.data;
   },
 );
