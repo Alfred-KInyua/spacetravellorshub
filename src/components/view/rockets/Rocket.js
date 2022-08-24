@@ -26,7 +26,8 @@ const Rocket = (props) => {
           <h2>{name}</h2>
         </div>
         <div>
-          {reserved && <span> Reserved</span>} {description}
+          {reserved && <span className="badge bg-primary"> Reserved</span>}{' '}
+          {description}
         </div>
         <button
           type="button"
