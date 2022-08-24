@@ -20,6 +20,10 @@ const rocketsReducer = (state = [], action) => {
   }
 };
 
+export const toggleReservedStatus = (id) => {
+  return { type: TOGGLE_RESERVED, payload: id };
+};
+
 export const getRockets = createAsyncThunk(GET_ROCKETS, async () => {
   const res = await fetch(rocketsApi);
   const data = await res.json();
