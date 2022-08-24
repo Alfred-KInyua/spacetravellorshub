@@ -5,9 +5,12 @@ import { useDispatch } from 'react-redux';
 import { toggleReservedStatus } from '../../../redux/rockets';
 
 const Rocket = (props) => {
+  const {
+    id, name, description, image, reserved,
+  } = props;
   const dispatch = useDispatch();
   const toggleReserved = () => {
-    dispatch(toggleReservedStatus(props.id));
+    dispatch(toggleReservedStatus(id));
   };
 
   return (
@@ -17,19 +20,21 @@ const Rocket = (props) => {
           style={{ width: '400px' }}
           className="p-3"
           alt="Responsive"
-          src={props.image}
+          src={image}
         />
       </div>
       <div className="mt-3">
         <div>
-          <h2>{props.name}</h2>
+          <h2>{name}</h2>
         </div>
         <div>
-          {props.reserved && <span> Reserved</span>} {props.description}
+          {reserved && <span> Reserved</span>}
+          {' '}
+          {description}
         </div>
         <button
           type="button"
-          className="badge bg-primary p-3"
+          className="btn btn-primary"
           onClick={toggleReserved}
         >
           Reserve Rocket
