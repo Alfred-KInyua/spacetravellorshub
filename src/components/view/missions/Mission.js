@@ -11,12 +11,12 @@ const Mission = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchMissions({ limit: 3 }));
-  }, [dispatch]);
+    if (!missions.length) dispatch(fetchMissions({ limit: 5 }));
+  }, []);
 
   return (
     <>
-      <table className="table table-striped">
+      <table className="table table-hover">
         <thead>
           <tr>
             <th>Mission</th>
