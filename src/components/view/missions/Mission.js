@@ -16,7 +16,7 @@ const Mission = () => {
 
   return (
     <>
-      <table className="table table-hover">
+      <table className="table table-striped">
         <thead>
           <tr>
             <th>Mission</th>

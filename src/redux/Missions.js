@@ -32,13 +32,13 @@ const missionsSlice = createSlice({
 
   extraReducers: {
     [fetchMissions.fulfilled]: (state, { payload }) => {
-      const missions = payload.map((mission) => ({
+      const requiredMissionsData = payload.map((mission) => ({
         mission_id: mission.mission_id,
         mission_name: mission.mission_name,
         description: mission.description,
         reserved: false,
       }));
-      return missions;
+      return requiredMissionsData;
     },
   },
 });
