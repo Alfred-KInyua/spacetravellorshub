@@ -4,14 +4,15 @@
 ## Built With
 - React
 - redux
+- Redux Toolkit
 
 ## Screenshot
 
-<!-- ![mobile version](/src/assets/images/mobile.png?raw=true "mobile version")
-![desktop version](/src/assets/images/desktop.png?raw=true "desktop version") -->
-## Live Demo Link (Comming soon)
+![Rocket page](/public/rocket.png?raw=true "mobile version")
+![Mission page](/public/mission.png?raw=true "desktop version")
+## Live Demo Link
 
-<!-- [netlify](https://yay-book-store.netlify.app/) -->
+[netlify](https://deploy-preview-58--cute-cranachan-7538ff.netlify.app/)
 ## Getting Started
 
 **To get a local copy up clone the repo or download the full souce code**
