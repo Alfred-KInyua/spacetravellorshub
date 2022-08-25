@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Rocket component Testing with snapshot 1`] = `
+<div>
+  <h1>
+    Rocket Page
+  </h1>
+  <ul />
+</div>
+`;
