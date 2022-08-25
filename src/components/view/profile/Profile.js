@@ -5,7 +5,11 @@ import profileStyles from './Profile.module.css';
 
 const Profile = () => {
   const missions = useSelector(selectMissions);
-  const joinedMissions = missions.filter((mission) => mission.reserved === true);
+  const rockets = useSelector((state) => state.rockets);
+  const joinedRockets = rockets.filter((rockets) => rockets.reserved === true);
+  const joinedMissions = missions.filter(
+    (mission) => mission.reserved === true,
+  );
 
   return (
     <div className={profileStyles.joinedSpaceHub}>
@@ -31,9 +35,11 @@ const Profile = () => {
             <th>My Rockets</th>
           </thead>
           <tbody>
-            <tr>
-              <td> </td>
-            </tr>
+            {joinedRockets.map((rocket) => (
+              <tr key={rocket.id}>
+                <td>{rocket.name}</td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
