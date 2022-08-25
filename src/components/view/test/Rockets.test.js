@@ -18,7 +18,7 @@ describe('Testing Rocket component', () => {
               reserved: true,
             }}
           />
-        </Provider>
+        </Provider>,
       )
       .toJSON();
     expect(tree).toMatchSnapshot();

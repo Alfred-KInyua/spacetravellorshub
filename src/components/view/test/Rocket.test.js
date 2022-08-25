@@ -9,7 +9,7 @@ describe('Testing RocketList component', () => {
       .create(
         <Provider store={store}>
           <RocketList />
-        </Provider>
+        </Provider>,
       )
       .toJSON();
     expect(tree).toMatchSnapshot();
