@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/jsx-key */
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
