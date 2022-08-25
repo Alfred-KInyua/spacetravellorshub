@@ -8,12 +8,11 @@ const Rockets = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getRockets());
+    if (!rockets.length) dispatch(getRockets());
   }, []);
 
   return (
     <div>
-      <h1>Rocket Page</h1>
       <ul>
         {rockets.map((rocket) => (
           <Rocket
