@@ -13,7 +13,6 @@ const Rocket = (props) => {
     dispatch(toggleReservedStatus(id));
   };
 
-  const myButton = reserved ? 'Cancel Reservation' : 'Reserve Rocket';
   return (
     <div className="d-flex flex-row bd-highlight mb-3 justify-content-center">
       <div style={{ width: '400px' }}>
@@ -33,13 +32,26 @@ const Rocket = (props) => {
           {' '}
           {description}
         </div>
-        <button
-          type="button"
-          className="btn btn-primary"
-          onClick={toggleReserved}
-        >
-          {myButton}
-        </button>
+        <div>
+          {' '}
+          {reserved ? (
+            <button
+              type="button"
+              className="btn btn-outline-secondary"
+              onClick={toggleReserved}
+            >
+              Cancel Reservation
+            </button>
+          ) : (
+            <button
+              type="button"
+              className="btn btn-primary"
+              onClick={toggleReserved}
+            >
+              Reserve Rocket
+            </button>
+          )}
+        </div>
       </div>
     </div>
   );
