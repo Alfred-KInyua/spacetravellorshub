@@ -1,5 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable react/jsx-key */
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {
@@ -7,13 +5,18 @@ import {
 } from '../../../redux/Missions';
 import 'bootstrap/dist/css/bootstrap.css';
 
+let init = true;
+
 const Mission = () => {
   const missions = useSelector(selectMissions);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (!missions.length) dispatch(fetchMissions({ limit: 5 }));
-  }, []);
+    if (init) {
+      dispatch(fetchMissions({ limit: 5 }));
+      init = false;
+    }
+  }, [dispatch]);
 
   return (
     <>

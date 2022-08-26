@@ -1,16 +1,20 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getRockets } from '../../../redux/rockets';
 import Rocket from './Rocket';
+
+let initial = true;
 
 const Rockets = () => {
   const rockets = useSelector((state) => state.rockets);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (!rockets.length) dispatch(getRockets());
-  }, []);
+    if (initial) {
+      dispatch(getRockets());
+      initial = false;
+    }
+  }, [dispatch]);
 
   const ulStyle = {
     marignLeft: 0,
