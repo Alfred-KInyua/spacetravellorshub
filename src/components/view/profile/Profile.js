@@ -13,7 +13,7 @@ const Profile = () => {
 
   return (
     <div className={profileStyles.joinedSpaceHub}>
-      <div className="joinedMissions">
+      <div className={profileStyles.joinedMissions}>
         <table className="table table-hover">
           <thead>
             <tr>
@@ -29,10 +29,12 @@ const Profile = () => {
           </tbody>
         </table>
       </div>
-      <div className="joinedRockets">
-        <table className="table">
+      <div className={profileStyles.joinedRockets}>
+        <table className="table table-hover">
           <thead>
-            <th>My Rockets</th>
+            <tr>
+              <th>My Rockets</th>
+            </tr>
           </thead>
           <tbody>
             {joinedRockets.map((rocket) => (
