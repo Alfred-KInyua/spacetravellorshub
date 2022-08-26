@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getRockets } from '../../../redux/rockets';
@@ -8,13 +9,17 @@ const Rockets = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getRockets());
+    if (!rockets.length) dispatch(getRockets());
   }, []);
+
+  const ulStyle = {
+    marignLeft: 0,
+    paddingLeft: 0,
+  };
 
   return (
     <div>
-      <h1>Rocket Page</h1>
-      <ul>
+      <ul style={ulStyle}>
         {rockets.map((rocket) => (
           <Rocket
             key={rocket.id}

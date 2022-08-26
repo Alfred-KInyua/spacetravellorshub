@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing RocketList component Testing with snapshot 1`] = `
+<div
+  className="d-flex flex-row bd-highlight mb-3 justify-content-center"
+>
+  <div
+    style={
+      Object {
+        "width": "400px",
+      }
+    }
+  >
+    <img
+      alt="Responsive"
+      className="p-3"
+      style={
+        Object {
+          "width": "300px",
+        }
+      }
+    />
+  </div>
+  <div
+    className="mt-3"
+  >
+    <div>
+      <h2 />
+    </div>
+    <div>
+       
+    </div>
+    <div>
+       
+      <button
+        className="btn btn-primary"
+        onClick={[Function]}
+        type="button"
+      >
+        Reserve Rocket
+      </button>
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Rocket component Testing with snapshot 1`] = `
+<div>
+  <ul
+    style={
+      Object {
+        "marignLeft": 0,
+        "paddingLeft": 0,
+      }
+    }
+  />
+</div>
+`;
