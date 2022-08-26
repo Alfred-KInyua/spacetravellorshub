@@ -23,5 +23,3 @@ exports[`should match snapshot of the mission component 1`] = `
   <tbody />
 </table>
 `;
-
-exports[`takes the correct snapshot of data 1`] = `<mockMissionData />`;
