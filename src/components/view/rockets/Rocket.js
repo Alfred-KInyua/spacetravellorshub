@@ -5,7 +5,9 @@ import { useDispatch } from 'react-redux';
 import { toggleReservedStatus } from '../../../redux/rockets';
 
 const Rocket = (props) => {
-  const { id, name, description, image, reserved } = props;
+  const {
+    id, name, description, image, reserved,
+  } = props;
   const dispatch = useDispatch();
   const toggleReserved = () => {
     dispatch(toggleReservedStatus(id));
@@ -26,7 +28,8 @@ const Rocket = (props) => {
           <h2>{name}</h2>
         </div>
         <div>
-          {reserved && <span className="badge bg-primary"> Reserved</span>}{' '}
+          {reserved && <span className="badge bg-primary"> Reserved</span>}
+          {' '}
           {description}
         </div>
         <div>
