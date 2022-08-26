@@ -17,7 +17,7 @@ const Rocket = (props) => {
     <div className="d-flex flex-row bd-highlight mb-3 justify-content-center">
       <div style={{ width: '400px' }}>
         <img
-          style={{ width: '400px' }}
+          style={{ width: '300px' }}
           className="p-3"
           alt="Responsive"
           src={image}

@@ -12,9 +12,14 @@ const Rockets = () => {
     if (!rockets.length) dispatch(getRockets());
   }, []);
 
+  const ulStyle = {
+    marignLeft: 0,
+    paddingLeft: 0,
+  };
+
   return (
     <div>
-      <ul>
+      <ul style={ulStyle}>
         {rockets.map((rocket) => (
           <Rocket
             key={rocket.id}
